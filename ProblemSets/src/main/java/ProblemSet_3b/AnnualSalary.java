@@ -4,12 +4,10 @@ public class AnnualSalary {
 
 	double salary;
 	double PERSONAL_ALLOWANCE = 121570;
-	
-	
 	public double getSalary() {
 		return salary;
 	}
-		
+	
 	public void setSalary(double Salary ) {
 		this.salary = Salary;
 	}
