@@ -3,35 +3,35 @@ package ProblemSet_2a;
 public class Student {
 
 	// Define Student attributes
-	static String forename = " ";
-	static String surname = " ";
-	static int age;
+	private  String forename = " ";
+	private  String surname = " ";
+	private  int age;
 	
 	public Student(String Forename, String Surname, int Age) {
 		forename = Forename;
 		surname = Surname;
 		age = Age;
 	}
-	
-	public static int getAge() {
+
+	public  int getAge() {
 		return age;
 	}
-	
+
 	public String getFullname() {
 		String Fullname = (forename + " " + surname);
 		return Fullname;
 	}
-	
-	public static void setAge(int Age) {
-		age = Age;
+
+	public  void setAge(int age) {
+		this.age = age;
 	}
-	
-	public static void setForename(String Forename) {
-		forename = Forename;
+
+	public void setForename(String forename) {
+		this.forename = forename;
 	}
-	
-	public static void setSurname(String Surname) {
-		surname = Surname;
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
-	
+
 }

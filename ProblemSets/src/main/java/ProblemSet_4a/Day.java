@@ -3,7 +3,6 @@ package ProblemSet_4a;
 public class Day {
 	private String name;
 	private Session[] sessions;
-	private Session storedSession;
 
 	public Day(String Day) {
 		this.sessions = new Session[4];
@@ -15,12 +14,10 @@ public class Day {
 	}
 
 	public Session getSessions(int index) {
-		for (int i = index; i<= 4; i++) {
+		for (int i = index; i<= 4;) {
 		Session storedSession = sessions[i];
-		System.out.println(storedSession.toString());
-		return storedSession;
-		}
-		return storedSession;
+		return storedSession;}
+		return null;
 	}
 
 	public String getName() {
@@ -29,7 +26,13 @@ public class Day {
 
 	@Override
 	public String toString(){
-		return (storedSession.getSessionName() + ": " + storedSession.getStartTime() + " - " + storedSession.getEndTime() + "\n");
+		String output = "";
+		for (int i = 0; i<4; i++) {
+			if (sessions[i] != null) {
+				output += (sessions[i].getSessionName() + ": " + sessions[i].getStartTime() + " - " + sessions[i].getEndTime() + "\n");
+			}
+		}
+		return output;
 	}
 
 	public void display() {
