@@ -6,11 +6,11 @@ public class Student {
 	private  String forename = " ";
 	private  String surname = " ";
 	private  int age;
-	
-	public Student(String Forename, String Surname, int Age) {
-		forename = Forename;
-		surname = Surname;
-		age = Age;
+
+	public Student(String forename, String surname, int age) {
+		this.forename = forename;
+		this.surname = surname;
+		this.age = age;
 	}
 
 	public  int getAge() {
@@ -18,8 +18,8 @@ public class Student {
 	}
 
 	public String getFullname() {
-		String Fullname = (forename + " " + surname);
-		return Fullname;
+		String fullname = (forename + " " + surname);
+		return fullname;
 	}
 
 	public  void setAge(int age) {
