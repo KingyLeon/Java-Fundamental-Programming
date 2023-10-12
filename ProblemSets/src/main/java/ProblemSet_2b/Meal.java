@@ -4,7 +4,7 @@ public class Meal {
 	private Food mainCourse;
 	private Food desert;
 
-	public Meal (Food main, Food dessert) {
+	public Meal(Food main, Food dessert) {
 		this.mainCourse = main;
 		this.desert = dessert;
 	}
