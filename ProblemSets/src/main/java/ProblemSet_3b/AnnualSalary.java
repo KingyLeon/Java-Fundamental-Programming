@@ -3,7 +3,7 @@ package ProblemSet_3b;
 public class AnnualSalary {
 
 	private double salary;
-	private final double PERSONAL_ALLOWANCE = 121570;
+	private final double PERSONAL_ALLOWANCE = 12570;
 	public double getSalary() {
 		return salary;
 	}
