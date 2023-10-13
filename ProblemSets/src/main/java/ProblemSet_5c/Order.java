@@ -7,8 +7,9 @@ public class Order {
 	private ArrayList<Pizza> pizzas;
 	Customer customer;
 	
-	public Order() {
+	public Order(Customer customer) {
 	pizzas = new ArrayList<Pizza>();
+	this.customer = customer;
 	}
 	
 	public void addPizza(Pizza pizzas) {
