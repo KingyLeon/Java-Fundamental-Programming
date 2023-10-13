@@ -13,7 +13,6 @@ public class GasBill {
 
 	public boolean checkAccountAccuracy(String accountNumber) {
 		boolean fact = false;
-		System.out.println(accountNumber.charAt(0));
 		if(accountNumber.charAt(0) == 'G') {
 			if(accountNumber.charAt(5) == '-') {
 				if(accountNumber.charAt(10) == '-') {
