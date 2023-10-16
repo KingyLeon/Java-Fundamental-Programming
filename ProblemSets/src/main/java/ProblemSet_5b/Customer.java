@@ -9,8 +9,9 @@ public class Customer {
 		this.surname = surname;
 	}
 
-	public String getName() {
-		return name;
+	public char getName() {
+		char initial = name.substring(0,1).charAt(0);
+	return initial;
 	}
 
 	public String getSurname() {
@@ -18,6 +19,6 @@ public class Customer {
 	}
 	
 	public String toString() {
-		return name.substring(0, 1) + ". "+ surname;
+		return getName() + ". "+ surname;
 	}
 }

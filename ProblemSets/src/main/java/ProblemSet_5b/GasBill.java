@@ -29,7 +29,7 @@ public class GasBill {
 
 	public String displayAccountDetails() {
 		String output = null;
-		String initial = customer.getName().substring(0,1);
+		char initial = customer.getName();
 		output = ("Gas Bill" + "\n");
 		output = output + (" Account Number:" + getAccountNumber() + "\n");
 		output = output + (" Customer:" + initial + ". "+ customer.getSurname() + "\n");
