@@ -1,10 +1,12 @@
 package ProblemSet_5c;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Order {
 
-	private ArrayList<Pizza> pizzas;
+	private List<Pizza> pizzas;
 	Customer customer;
 	
 	public Order(Customer customer) {
