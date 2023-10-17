@@ -3,7 +3,7 @@ package ProblemSet_3c;
 public class AnnualSalary {
 
 	double salary;
-	double personalAllowance = 121570;
+	double personalAllowance = 12570;
 
 	public double getSalary() {
 		return salary;
@@ -18,16 +18,16 @@ public class AnnualSalary {
 		double higher = 50270;
 		double additional = 125140;
 		if (salary > additional) {
-			tax = (salary - additional)*0.45;
-			tax = tax + ((additional - higher) *0.4);
-			tax = tax + ((higher - personalAllowance) *0.2);
+			tax = (salary - additional)* 0.45;
+			tax = tax + ((additional - higher) * 0.4);
+			tax = tax + ((higher - personalAllowance) * 0.2);
 			return tax;
 		} else if (salary > higher) {
-			tax = tax + ((salary - higher) *0.4);
-			tax = tax + ((higher - personalAllowance) *0.2);
+			tax = tax + ((salary - higher) * 0.4);
+			tax = tax + ((higher - personalAllowance) * 0.2);
 			return tax;
 		} else if (salary > personalAllowance) {
-			tax = tax + ((salary - personalAllowance) *0.2);
+			tax = tax + ((salary - personalAllowance) * 0.2);
 			return tax;
 		}
 		return tax;

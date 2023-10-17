@@ -9,7 +9,7 @@ public class Pizza {
 		
 	public void addToppings(String[] toppings) {
 		this.toppings = new String[10];
-		for(int i=0; i < toppings.length; i++) {
+		for(int i = 0; i < toppings.length ; i++) {
 			if (this.toppings[i] == null) {	
 				this.toppings[i] = toppings[i];
 			}
@@ -18,7 +18,7 @@ public class Pizza {
 
 	public String printToppings() {
 		String output = "";
-		for (int i=0 ; i< 10 ; i++) {
+		for (int i = 0 ; i< 10 ; i++) {
 			if (toppings[i] != null) {
 			output = output + toppings[i] + ",";
 			}
@@ -28,8 +28,8 @@ public class Pizza {
 
 	public double calculateCost() {
 		int count = 0;
-		for (int i = 0; i<10 ; i++) {
-			if(toppings[i]!= null) {
+		for (int i = 0 ; i < 10 ; i++) {
+			if(toppings[i] != null) {
 				count = count + 1;
 			}
 		}
@@ -39,7 +39,7 @@ public class Pizza {
 			return 0;
 		case 1: 
 			return 9.99;
-		case (2 |3):
+		case (2 | 3):
 			return 10.99;
 		case (4 | 5):
 			return 11.99;
@@ -53,7 +53,8 @@ public class Pizza {
 			return 15.99;
 		case(10):
 			return 14.99;
+		default:
+			return 0;
 			}
-		return 0;
 		}
 	}

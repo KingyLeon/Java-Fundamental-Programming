@@ -1,9 +1,9 @@
 package ProblemSet_4a;
 
 public class Day {
+
 	private String name;
 	private Session[] sessions;
-
 	public Day(String day) {
 		this.sessions = new Session[4];
 		this.name = day;

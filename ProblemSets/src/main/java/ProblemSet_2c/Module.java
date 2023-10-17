@@ -1,13 +1,16 @@
 package ProblemSet_2c;
 
 public class Module {
-	String Name;
+	private String name = "COM1027";
 	private Assessment assessment1;
 	private Assessment assessment2;
 	private Assessment assessment3;
 	private double average;
 
-	public Module(Assessment assessment1,Assessment assessment2, Assessment assessment3 ) {
+	public Module(Assessment assessment1, 
+			Assessment assessment2, 
+			Assessment assessment3) {
+		
 		this.assessment1 = assessment1;
 		this.assessment2 = assessment2;
 		this.assessment3 = assessment3;
@@ -21,6 +24,6 @@ public class Module {
 	}
 
 	public String toString() {
-		return ("COM1027 (" + calculateAverage() + "%)");
+		return (name +" (" + calculateAverage() + "%)");
 	}
 }
