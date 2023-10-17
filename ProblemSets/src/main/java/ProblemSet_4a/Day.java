@@ -4,19 +4,22 @@ public class Day {
 	private String name;
 	private Session[] sessions;
 
-	public Day(String Day) {
+	public Day(String day) {
 		this.sessions = new Session[4];
-		this.name = Day;
+		this.name = day;
 	}
 
-	public void setSession(int index, String moduleName, int startTime, int endTime) {
+	public void setSession(int index,
+			String moduleName,
+			int startTime,
+			int endTime) {
 		sessions[index] = new Session(moduleName, startTime, endTime);
 	}
 
 	public Session getSessions(int index) {
-		for (int i = index; i<= 4;) {
+		for (int i = index; i <= 4;) {
 		Session storedSession = sessions[i];
-		return storedSession;}
+		return storedSession; }
 		return null;
 	}
 
@@ -27,9 +30,10 @@ public class Day {
 	@Override
 	public String toString(){
 		String output = "";
-		for (int i = 0; i<4; i++) {
+		for (int i = 0; i < 4; i++) {
 			if (sessions[i] != null) {
-				output += (sessions[i].getSessionName() + ": " + sessions[i].getStartTime() + " - " + sessions[i].getEndTime() + "\n");
+				output += sessions[i].getSessionName() + ": " + sessions[i].getStartTime();
+				output += " - " + sessions[i].getEndTime() + "\n";
 			}
 		}
 		return output;

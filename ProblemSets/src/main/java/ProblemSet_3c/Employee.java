@@ -46,10 +46,12 @@ public class Employee {
 	}
 
 	public String toString() {
+		String output = surname + ", " + forename + " (" + id + "): " + Position.getRoleName();
+		output = output +  " at £" + salary.getSalary() + " (£" + salary.calculateTax();
 		if (eligibleForBonus() == true) {
-		return (surname + ", " + forename + " (" + id + "): " + Position.getRoleName() + " at £" + salary.getSalary() + " (£" + salary.calculateTax() +" tax) and is eligible for bonus.");
+		return (output + " tax) and is eligible for bonus.");
 	}
-		return (surname + ", " + forename + " (" + id + "): " + Position.getRoleName() + " at £" + salary.getSalary() + " (£" + salary.calculateTax() +" tax) and is not eligible for bonus.");
+		return (output + " tax) and is not eligible for bonus.");
 
 	}
 }

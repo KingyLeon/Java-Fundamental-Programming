@@ -22,11 +22,11 @@ public class Session {
 	public int getEndTime() {
 		return endTime;
 	}
-	
+
 	public void setStartTime(int startTime) {
 		this.startTime = startTime;
 	}
-	
+
 	public void setEndTime(int endTime) {
 		this.endTime = endTime;
 	}

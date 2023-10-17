@@ -9,11 +9,11 @@ public class Assessment {
 		this.mark = mark;
 	}
 
-	public String getName(){
+	public String getName() {
 		return name;
 	}
 
-	public double getMark(){
+	public double getMark() {
 		return mark;
 	}
 }
