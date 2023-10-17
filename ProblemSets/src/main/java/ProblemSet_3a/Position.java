@@ -2,16 +2,12 @@ package ProblemSet_3a;
 
 public class Position {
 	
-	public Position() {
-		
-	}
-	String RoleName;
-	
+	private String roleName;
 	public String getRoleName() {
-		return RoleName;
+		return roleName;
 	}
-	
-	public void setRoleName(String role) {
-		RoleName = role;
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 }

@@ -12,8 +12,8 @@ public class Meal {
 	public double calculateTotalSugarLevel() {
 		double output = mainCourse.getAmountOfSugar();
 				output = output + dessert.getAmountOfSugar();
-		return (mainCourse.getAmountOfSugar() + 
-				dessert.getAmountOfSugar());
+		return (mainCourse.getAmountOfSugar()
+				+ dessert.getAmountOfSugar());
 	}
 
 	public String toString() {

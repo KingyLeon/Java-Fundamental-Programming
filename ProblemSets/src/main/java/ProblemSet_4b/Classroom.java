@@ -2,12 +2,12 @@ package ProblemSet_4b;
 
 public class Classroom {
 	private String room;
-	private final int CAPACITY = 20;
+	private final int capacity = 20;
 	private Student[] maxStudents;
 
 	public Classroom(String room) {
 		this.room = room;
-		this.maxStudents = new Student[CAPACITY];
+		this.maxStudents = new Student[capacity];
 		}
 
 	public void addStudents(int index, char initial, String surname) {
@@ -16,7 +16,7 @@ public class Classroom {
 
 	public int howManyStudents() {
 		int count = 0;
-		for (int i =0; i<maxStudents.length; i++) {
+		for (int i = 0; i < maxStudents.length; i++) {
 			if (maxStudents[i] != null) {
 				count = count +1;
 			}
@@ -29,7 +29,7 @@ public class Classroom {
 	}
 
 	public int getCapacity() {
-		return CAPACITY;
+		return capacity;
 	}
 
 	public String getSummary() {
@@ -38,9 +38,10 @@ public class Classroom {
 		if (howManyStudents() == 0) {
 			students = "No students added";
 		}
-		for (int i = 0; i < arrayLength; i ++ ) {
+		for (int i = 0; i < arrayLength; i++) {
 			if (maxStudents[i] != null) {
-			students = students + maxStudents[i].getStudentDetails() +"\n";
+			students = students
+					+ maxStudents[i].getStudentDetails() + "\n";
 			}
 		}
 		return students;

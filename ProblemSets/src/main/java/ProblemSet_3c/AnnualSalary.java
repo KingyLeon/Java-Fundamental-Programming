@@ -2,15 +2,15 @@ package ProblemSet_3c;
 
 public class AnnualSalary {
 
-	double salary;
-	double personalAllowance = 12570;
+	private double salary;
+	private double personalAllowance = 12570;
 
 	public double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(double Salary ) {
-		this.salary = Salary;
+	public void setSalary(double salary ) {
+		this.salary = salary;
 	}
 
 	public double calculateTax() {

@@ -1,14 +1,14 @@
 package ProblemSet_3c;
 
 public class Position {
-	
-	private String RoleName;
-	
+
+	private String roleName;
+
 	public String getRoleName() {
-		return RoleName;
+		return roleName;
 	}
 
 	public void setRoleName(String role) {
-		RoleName = role;
+		roleName = role;
 	}
 }

@@ -45,13 +45,13 @@ public class Pizza {
 			return 11.99;
 		case (6):
 			return 12.99;
-		case(7):
+		case (7):
 			return 13.99;
-		case(8):
+		case (8):
 			return 14.99;
-		case(9):
+		case (9):
 			return 15.99;
-		case(10):
+		case (10):
 			return 14.99;
 		default:
 			return 0;

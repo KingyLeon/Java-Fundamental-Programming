@@ -13,21 +13,25 @@ public class Student {
 	
 	int calculateYearAverage() {
 		double output = 0;
-		for(int i = 0; i<8; i++) {
+		for (int i = 0; i < 8; i++) {
 			output += modules[i].getAverage();
 		}
 		output = output / 8;
 		return (int) output;
 	}
-	
+
 	public String displayArray() {
-		String output ="";
+		String output = "";
 		for (int i = 0; i < 8; i++) {
-			if(modules[i]!= null) {
-				output = output + modules[i].getCode() + ": " + modules[i].getAverage() + "\n";
+			if (modules[i] != null) {
+				output = output
+						+ modules[i].getCode()
+						+ ": " + modules[i].getAverage() + "\n";
 			}
 		}
-		output = output +"Year Average: " + calculateYearAverage() + "%";
+		output = output
+				+ "Year Average: "
+				+ calculateYearAverage() + "%";
 		return output;
 	}
 	
@@ -36,12 +40,13 @@ public class Student {
 		Module output = modules[index];
 		return output;
 	}
-	
 	public String getStudentDetails() {
 		return (initial + ". " + surname + " " + calculateYearAverage() + "%");
 	}
-	
-	public void setModules(int index, String code, double average) {
+
+	public void setModules(int index,
+			String code,
+			double average) {
 		modules[index] = new Module(code, average);
 	}
 }

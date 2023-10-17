@@ -8,10 +8,10 @@ public class RainfallYear {
 		this.year = year;
 		rainfallMonths = new double[12];
 	}
-	
+
 	public double calculateMeanRainfall() {
 		double total = 0;
-		for (int i = 0; i<= 11; i++)
+		for (int i = 0; i <= 11; i++)
 		{
 			if(rainfallMonths[i] != 0.0) {
 			total = total + rainfallMonths[i];
@@ -20,17 +20,17 @@ public class RainfallYear {
 		total = total / 12;
 		return total;
 	}
-	
+
 	public double calculateHighestRainfall() {
 		double highest = 0;
-		for(int i=0; i<=11; i++) {
+		for(int i = 0; i <=11; i++) {
 			if (rainfallMonths[i] > highest) {
 				highest = rainfallMonths[i];
 			}
 		}
 		return highest;
 	}
-	
+
 	public void enterData(double[] rainfall) {
 		rainfallMonths = new double[12];
 		rainfallMonths = rainfall;
@@ -75,10 +75,12 @@ public class RainfallYear {
 			case ("DECEMBER"):
 				rain = rainfallMonths[11];
 			break;
+			default:
+				rain = 0;
 		}
 		return rain;
 	}
-	
+
 	public int getYear() {
 	return year;	
 	}

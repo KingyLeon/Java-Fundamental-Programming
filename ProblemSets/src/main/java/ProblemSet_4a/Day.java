@@ -28,12 +28,14 @@ public class Day {
 	}
 
 	@Override
-	public String toString(){
+	public String toString() {
 		String output = "";
 		for (int i = 0; i < 4; i++) {
 			if (sessions[i] != null) {
-				output += sessions[i].getSessionName() + ": " + sessions[i].getStartTime();
-				output += " - " + sessions[i].getEndTime() + "\n";
+				output += sessions[i].getSessionName()
+						+ ": " + sessions[i].getStartTime();
+				output += " - " + sessions[i].getEndTime()
+						+ "\n";
 			}
 		}
 		return output;

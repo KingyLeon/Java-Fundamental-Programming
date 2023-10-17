@@ -18,6 +18,6 @@ public class Module {
 	}
 
 	public String toString() {
-		return (code +": "+ average );
+		return (code + ": " + average );
 	}
 }

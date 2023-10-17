@@ -14,24 +14,22 @@ public class AnnualSalary {
 	}
 	
 	public double calculateTax() {
-		double Tax = 0;
+		double tax = 0;
 		double higher = 50270;
 		double additional = 125140;
 		if (salary > additional) { 
-			Tax = (salary - additional)*0.45;
-			Tax = Tax + ((additional - higher) *0.4);
-			Tax = Tax + ((higher - personalAllowance) *0.2);
-			return Tax;
+			tax = (salary - additional) * 0.45;
+			tax = tax + ((additional - higher) * 0.4);
+			tax = tax + ((higher - personalAllowance) * 0.2);
+			return tax;
+		} else if (salary > higher) {
+			tax = tax + ((salary - higher) * 0.4);
+			tax = tax + ((higher - personalAllowance) * 0.2);
+			return tax;
+		} else if (salary > personalAllowance) {
+			tax = tax + ((salary - personalAllowance) * 0.2);
+			return tax;
 		} 
-		else if (salary > higher) {
-			Tax = Tax + ((salary - higher) *0.4);
-			Tax = Tax + ((higher - personalAllowance) *0.2);
-			return Tax;
-		} 
-		else if (salary > personalAllowance) {
-			Tax = Tax + ((salary - personalAllowance) *0.2);
-			return Tax;
-		} 
-		return Tax;
+		return tax;
 	}
 }
