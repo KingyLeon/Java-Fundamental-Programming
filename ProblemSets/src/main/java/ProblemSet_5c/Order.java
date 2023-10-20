@@ -7,7 +7,7 @@ import java.util.List;
 public class Order {
 
 	private List<Pizza> pizzas;
-	Customer customer;
+	private Customer customer;
 
 	public Order(Customer customer) {
 	pizzas = new ArrayList<Pizza>();

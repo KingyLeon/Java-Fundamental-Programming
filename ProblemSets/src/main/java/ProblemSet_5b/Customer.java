@@ -17,8 +17,8 @@ public class Customer {
 	public String getSurname() {
 		return surname;
 	}
-	
+
 	public String toString() {
-		return getName() + ". "+ surname;
+		return getName() + ". " + surname;
 	}
 }

@@ -42,7 +42,7 @@ public class Student {
 		return output;
 	}
 	public String getStudentDetails() {
-		return (initial + ". " + surname 
+		return (initial + ". " + surname
 				+ " "
 				+ calculateYearAverage()
 				+ "%");

@@ -17,9 +17,9 @@ public class GasBill {
 			if (accountNumber.charAt(5) == '-') {
 				if (accountNumber.charAt(10) == '-') {
 					if (String.valueOf(
-							Integer.parseInt(
-							(accountNumber).substring(1,5)))
-							!= "NumberFormatException"){
+						Integer.parseInt(
+						(accountNumber).substring(1,5)))
+						!= "NumberFormatException") {
 						if (String.valueOf(
 							Integer.parseInt(
 							(accountNumber).substring(6, 10)))
@@ -37,7 +37,10 @@ public class GasBill {
 		String output = null;
 		char initial = customer.getName();
 		output = ("Gas Bill" + "\n");
-		output = output + (" Account Number:" + getAccountNumber() + "\n");
+		output = output
+				+ (" Account Number:"
+				+ getAccountNumber()
+				+ "\n");
 		output = output + (" Customer:"
 		+ initial
 		+ ". "

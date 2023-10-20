@@ -41,7 +41,7 @@ public class Classroom {
 		for (int i = 0; i < arrayLength; i++) {
 			if (maxStudents[i] != null) {
 			students = students
-				+ maxStudents[i].getStudentDetails() 
+				+ maxStudents[i].getStudentDetails()
 				+ "\n";
 			}
 		}

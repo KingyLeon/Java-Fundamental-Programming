@@ -7,11 +7,11 @@ public class Pizza {
 	public Pizza() {
 		toppings = new String[10];
 	}
-		
+
 	public void addToppings(String[] toppings) {
 		this.toppings = new String[10];
 		for (int i = 0; i < toppings.length; i++) {
-			if (this.toppings[i] == null) {	
+			if (this.toppings[i] == null) {
 				this.toppings[i] = toppings[i];
 			}
 		}
@@ -19,7 +19,7 @@ public class Pizza {
 
 	public String printToppings() {
 		String output = "";
-		for (int i = 0; i< 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			if (toppings[i] != null) {
 			output = output + toppings[i] + ",";
 			}
