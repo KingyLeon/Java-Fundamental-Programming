@@ -49,11 +49,11 @@ public class Employee {
 	}
 
 	public String toString() {
-		String output = surname + ", " + forename 
+		String output = surname + ", " + forename
 				+ " (" + id + "): " + position.getRoleName();
-		output = output +  " at £" 
+		output = output +  " at £"
 		+ salary.getSalary() + " (£" + salary.calculateTax();
-		if (eligibleForBonus() == true) {
+		if (eligibleForBonus()) {
 		return (output + " tax) and is eligible for bonus.");
 	}
 		return (output + " tax) and is not eligible for bonus.");

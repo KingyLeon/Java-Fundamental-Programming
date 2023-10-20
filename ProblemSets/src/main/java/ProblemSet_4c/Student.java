@@ -26,7 +26,7 @@ public class Student {
 			if (modules[i] != null) {
 				output = output
 					+ modules[i].getCode()
-					+ ": " + modules[i].getAverage() 
+					+ ": " + modules[i].getAverage()
 					+ "\n";
 			}
 		}
@@ -35,7 +35,7 @@ public class Student {
 				+ calculateYearAverage() + "%";
 		return output;
 	}
-	
+
 	public Module getModules(int index) {
 		System.out.println(modules[index].getCode());
 		Module output = modules[index];
@@ -43,8 +43,8 @@ public class Student {
 	}
 	public String getStudentDetails() {
 		return (initial + ". " + surname 
-				+ " " 
-				+ calculateYearAverage() 
+				+ " "
+				+ calculateYearAverage()
 				+ "%");
 	}
 

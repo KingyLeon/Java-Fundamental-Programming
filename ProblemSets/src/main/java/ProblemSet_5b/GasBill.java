@@ -18,15 +18,16 @@ public class GasBill {
 				if (accountNumber.charAt(10) == '-') {
 					if (String.valueOf(
 							Integer.parseInt(
-							(accountNumber).substring(1,5))) 
+							(accountNumber).substring(1,5)))
 							!= "NumberFormatException"){
 						if (String.valueOf(
 							Integer.parseInt(
-							(accountNumber).substring(6, 10))) != "NumberFormatException") {
+							(accountNumber).substring(6, 10)))
+							!= "NumberFormatException") {
 							fact = true;
 						}
 					}
-				}	
+				}
 			}
 		}
 		return fact;
@@ -37,8 +38,14 @@ public class GasBill {
 		char initial = customer.getName();
 		output = ("Gas Bill" + "\n");
 		output = output + (" Account Number:" + getAccountNumber() + "\n");
-		output = output + (" Customer:" + initial + ". "+ customer.getSurname() + "\n");
-		output = output + " Amount due:£" + String.format("%.2f",  amount);
+		output = output + (" Customer:"
+		+ initial
+		+ ". "
+		+ customer.getSurname()
+		+ "\n");
+		output = output
+				+ " Amount due:£"
+				+ String.format("%.2f",  amount);
 		return output;
 	}
 
@@ -48,7 +55,7 @@ public class GasBill {
 
 	public String getAccountNumber() {
 		String output = "Invalid Account";
-		if (checkAccountAccuracy(accountNumber) == true) {
+		if (checkAccountAccuracy(accountNumber)) {
 		return accountNumber;
 		}
 		return output;

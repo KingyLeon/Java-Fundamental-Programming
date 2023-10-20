@@ -22,7 +22,7 @@ public class RainfallYear {
 
 	public double calculateHighestRainfall() {
 		double highest = 0;
-		for (int i = 0; i <=11; i++) {
+		for (int i = 0; i <= 11; i++) {
 			if (rainfallMonths[i] > highest) {
 				highest = rainfallMonths[i];
 			}
