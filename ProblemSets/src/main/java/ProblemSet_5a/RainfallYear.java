@@ -2,8 +2,8 @@ package ProblemSet_5a;
 
 public class RainfallYear {
 	private int year;
-	double[] rainfallMonths;
-	
+	private double[] rainfallMonths;
+
 	public RainfallYear(int year) {
 		this.year = year;
 		rainfallMonths = new double[12];
@@ -11,9 +11,8 @@ public class RainfallYear {
 
 	public double calculateMeanRainfall() {
 		double total = 0;
-		for (int i = 0; i <= 11; i++)
-		{
-			if(rainfallMonths[i] != 0.0) {
+		for (int i = 0; i <= 11; i++) {
+			if (rainfallMonths[i] != 0.0) {
 			total = total + rainfallMonths[i];
 			}
 		}
@@ -23,7 +22,7 @@ public class RainfallYear {
 
 	public double calculateHighestRainfall() {
 		double highest = 0;
-		for(int i = 0; i <=11; i++) {
+		for (int i = 0; i <=11; i++) {
 			if (rainfallMonths[i] > highest) {
 				highest = rainfallMonths[i];
 			}
@@ -38,7 +37,7 @@ public class RainfallYear {
 
 	public double getRainfallMonth(String month) {
 		double rain = 0;
-		switch(month.toUpperCase()) {
+		switch (month.toUpperCase()) {
 			case ("JANUARY"):
 				rain = rainfallMonths[0];
 			break;
@@ -82,6 +81,6 @@ public class RainfallYear {
 	}
 
 	public int getYear() {
-	return year;	
+	return year;
 	}
 }

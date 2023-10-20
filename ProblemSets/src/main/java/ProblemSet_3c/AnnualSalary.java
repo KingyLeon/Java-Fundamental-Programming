@@ -9,7 +9,7 @@ public class AnnualSalary {
 		return salary;
 	}
 
-	public void setSalary(double salary ) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
 
@@ -18,7 +18,7 @@ public class AnnualSalary {
 		double higher = 50270;
 		double additional = 125140;
 		if (salary > additional) {
-			tax = (salary - additional)* 0.45;
+			tax = (salary - additional) * 0.45;
 			tax = tax + ((additional - higher) * 0.4);
 			tax = tax + ((higher - personalAllowance) * 0.2);
 			return tax;

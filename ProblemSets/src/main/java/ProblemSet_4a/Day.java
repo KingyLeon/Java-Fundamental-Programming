@@ -33,7 +33,7 @@ public class Day {
 		for (int i = 0; i < 4; i++) {
 			if (sessions[i] != null) {
 				output += sessions[i].getSessionName()
-						+ ": " + sessions[i].getStartTime();
+				+ ": " + sessions[i].getStartTime();
 				output += " - " + sessions[i].getEndTime()
 						+ "\n";
 			}

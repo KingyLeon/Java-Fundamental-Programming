@@ -18,7 +18,7 @@ public class Classroom {
 		int count = 0;
 		for (int i = 0; i < maxStudents.length; i++) {
 			if (maxStudents[i] != null) {
-				count = count +1;
+				count = count + 1;
 			}
 		}
 		return count;
@@ -41,7 +41,8 @@ public class Classroom {
 		for (int i = 0; i < arrayLength; i++) {
 			if (maxStudents[i] != null) {
 			students = students
-					+ maxStudents[i].getStudentDetails() + "\n";
+				+ maxStudents[i].getStudentDetails() 
+				+ "\n";
 			}
 		}
 		return students;

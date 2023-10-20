@@ -13,11 +13,16 @@ public class GasBill {
 
 	public boolean checkAccountAccuracy(String accountNumber) {
 		boolean fact = false;
-		if(accountNumber.charAt(0) == 'G') {
-			if(accountNumber.charAt(5) == '-') {
-				if(accountNumber.charAt(10) == '-') {
-					if (String.valueOf(Integer.parseInt((accountNumber).substring(1,5))) != "NumberFormatException"){
-						if (String.valueOf(Integer.parseInt((accountNumber).substring(6,10))) != "NumberFormatException"){
+		if (accountNumber.charAt(0) == 'G') {
+			if (accountNumber.charAt(5) == '-') {
+				if (accountNumber.charAt(10) == '-') {
+					if (String.valueOf(
+							Integer.parseInt(
+							(accountNumber).substring(1,5))) 
+							!= "NumberFormatException"){
+						if (String.valueOf(
+							Integer.parseInt(
+							(accountNumber).substring(6, 10))) != "NumberFormatException") {
 							fact = true;
 						}
 					}

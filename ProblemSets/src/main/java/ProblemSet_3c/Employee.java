@@ -1,12 +1,12 @@
 package ProblemSet_3c;
 public class Employee {
 
-	int id;
+	private int id;
 	private String forename;
 	private String surname;
 	private AnnualSalary salary;
 	private Position position;
-	
+
 	public Employee(int id, String forename,
 			String surname,
 			AnnualSalary salary,
@@ -20,11 +20,11 @@ public class Employee {
 	public String getForename() {
 		return forename;
 	}
-	
+
 	public String getSurname() {
 		return surname;
 	}
-	
+
 	public double getSalary() {
 		return salary.getSalary();
 	}
@@ -49,8 +49,10 @@ public class Employee {
 	}
 
 	public String toString() {
-		String output = surname + ", " + forename + " (" + id + "): " + position.getRoleName();
-		output = output +  " at £" + salary.getSalary() + " (£" + salary.calculateTax();
+		String output = surname + ", " + forename 
+				+ " (" + id + "): " + position.getRoleName();
+		output = output +  " at £" 
+		+ salary.getSalary() + " (£" + salary.calculateTax();
 		if (eligibleForBonus() == true) {
 		return (output + " tax) and is eligible for bonus.");
 	}

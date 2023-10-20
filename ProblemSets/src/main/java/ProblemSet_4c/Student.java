@@ -4,13 +4,13 @@ public class Student {
 	private char initial;
 	private String surname;
 	private Module[] modules;
-	
+
 	public Student(char initial, String surname) {
 		this.initial = initial;
 		this.surname = surname;
 		this.modules = new Module[8];
 	}
-	
+
 	int calculateYearAverage() {
 		double output = 0;
 		for (int i = 0; i < 8; i++) {
@@ -25,8 +25,9 @@ public class Student {
 		for (int i = 0; i < 8; i++) {
 			if (modules[i] != null) {
 				output = output
-						+ modules[i].getCode()
-						+ ": " + modules[i].getAverage() + "\n";
+					+ modules[i].getCode()
+					+ ": " + modules[i].getAverage() 
+					+ "\n";
 			}
 		}
 		output = output
@@ -41,7 +42,10 @@ public class Student {
 		return output;
 	}
 	public String getStudentDetails() {
-		return (initial + ". " + surname + " " + calculateYearAverage() + "%");
+		return (initial + ". " + surname 
+				+ " " 
+				+ calculateYearAverage() 
+				+ "%");
 	}
 
 	public void setModules(int index,
