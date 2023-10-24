@@ -10,8 +10,8 @@ public class Order {
 	private Customer customer;
 
 	public Order(Customer customer) {
-	pizzas = new ArrayList<Pizza>();
-	this.customer = customer;
+		this.pizzas = new ArrayList<Pizza>();
+		this.customer = customer;
 	}
 
 	public void addPizza(Pizza pizzas) {
@@ -28,8 +28,12 @@ public class Order {
 
 	public String printReceipt() {
 		String output = "Customer: " + customer.toString() + "\n";
-		output = output + "Number of Pizzas: " + pizzas.size() + "\n";
-		output = output + "Total Cost: " + calculateTotal();
+		output = output
+				+ "Number of Pizzas: "
+				+ pizzas.size()
+				+ "\n";
+		output += "Total Cost: "
+				+ calculateTotal();
 		return output;
 	}
 

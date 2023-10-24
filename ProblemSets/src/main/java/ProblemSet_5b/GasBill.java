@@ -18,12 +18,12 @@ public class GasBill {
 				if (accountNumber.charAt(10) == '-') {
 					if (String.valueOf(
 						Integer.parseInt(
-						(accountNumber).substring(1,5)))
+						(accountNumber).substring(1, 5)))
 						!= "NumberFormatException") {
 						if (String.valueOf(
-							Integer.parseInt(
-							(accountNumber).substring(6, 10)))
-							!= "NumberFormatException") {
+						Integer.parseInt(
+						(accountNumber).substring(6, 10)))
+						!= "NumberFormatException") {
 							fact = true;
 						}
 					}
