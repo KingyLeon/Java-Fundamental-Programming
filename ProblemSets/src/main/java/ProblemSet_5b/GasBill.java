@@ -12,44 +12,19 @@ public class GasBill {
 	}
 
 	public boolean checkAccountAccuracy(String accountNumber) {
-		boolean fact = false;
-		if (accountNumber.charAt(0) == 'G') {
-			if (accountNumber.charAt(5) == '-') {
-				if (accountNumber.charAt(10) == '-') {
-					if (String.valueOf(
-						Integer.parseInt(
-						(accountNumber).substring(1, 5)))
-						!= "NumberFormatException") {
-						if (String.valueOf(
-						Integer.parseInt(
-						(accountNumber).substring(6, 10)))
-						!= "NumberFormatException") {
-							fact = true;
-						}
-					}
-				}
-			}
-		}
-		return fact;
+		String accountCheck = "G[0-9]{4}-[0-9]{4}-[0-9]{4}";
+		return accountNumber.matches(accountCheck);
 	}
 
 	public String displayAccountDetails() {
-		String output = null;
+		StringBuffer output = new StringBuffer();
 		char initial = customer.getName();
-		output = ("Gas Bill" + "\n");
-		output = output
-				+ (" Account Number:"
-				+ getAccountNumber()
-				+ "\n");
-		output = output + (" Customer:"
-		+ initial
-		+ ". "
-		+ customer.getSurname()
-		+ "\n");
-		output = output
-				+ " Amount due:£"
-				+ String.format("%.2f",  amount);
-		return output;
+		output.append("Gas Bill" + "\n");
+		output.append(" Account Number:" + getAccountNumber() + "\n");
+		output.append(" Customer:" + initial + ". ");
+		output.append(customer.getSurname() + "\n");
+		output.append(" Amount due:£" + String.format("%.2f",  amount));
+		return output.toString();
 	}
 
 	public String displayAmountDue() {

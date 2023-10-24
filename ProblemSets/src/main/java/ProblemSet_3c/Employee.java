@@ -7,7 +7,8 @@ public class Employee {
 	private AnnualSalary salary;
 	private Position position;
 
-	public Employee(int id, String forename,
+	public Employee(int id,
+			String forename,
 			String surname,
 			AnnualSalary salary,
 			Position position) {
