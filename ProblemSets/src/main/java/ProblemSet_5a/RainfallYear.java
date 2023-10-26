@@ -75,7 +75,7 @@ public class RainfallYear {
 				rain = rainfallMonths[11];
 			break;
 			default:
-				rain = 0;
+				rain = 0.0;
 		}
 		return rain;
 	}
