@@ -1,4 +1,4 @@
-package ProblemSet_7b;
+package ProblemSet_7c;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +26,10 @@ public class Student {
 
 	public String printModules() {
 		StringBuffer output = new StringBuffer();
-		for (int i =0; i < moduleList.size() ; i++) {
-			if(moduleList.get(i) != null) {
-			output.append(moduleList.get(i).getName());
-			output.append(", ");
+		for (int i = 0; i < moduleList.size(); i++) {
+			if (moduleList.get(i) != null) {
+				output.append(moduleList.get(i).getName());
+				output.append(", ");
 			}
 		}
 		output.delete(output.length() - 2, output.length());
