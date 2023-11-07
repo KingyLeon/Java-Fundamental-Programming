@@ -49,8 +49,6 @@ public class Palette {
 	}
 
 	public String mixColours() {
-		// RED + BLUE + YELLOW = BLACK
-
 		StringBuffer mix = new StringBuffer();
 		String mixString = "";
 		String finalOut;
