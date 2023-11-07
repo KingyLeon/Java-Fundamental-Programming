@@ -56,25 +56,28 @@ public class Guest implements IGuest {
 	}
 
 	@Override
+	// Method for calculating total charge Plus the total VAT charge
 	public double calculateTotalChargeIncVat() {
-		// METHOD NOT FINISHED PLS FIX YOU MORON
+		// Initialise variables outside of loop
 		double charge = 0;
 		double vat = 0;
+		// Loop through list to calculate charge and vat
 		for (int i = 0; i < charges.size(); i++) {
 			charge += charges.get(i).getCharge();
 			vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
 		}
-		System.out.println(charge + vat);
 		return (charge + vat);
 	}
 
 	// Method for returning guest details in certain format
 	public String toString() {
+		// Use StringBuffer class for easier concatenation
 		StringBuffer output = new StringBuffer();
 		output.append(forename);
 		output.append(" " + surname);
 		output.append(", " + address);
 		output.append(", " + telephone);
+		// Convert StringBuffer to String class
 		return output.toString();
 	}
 
