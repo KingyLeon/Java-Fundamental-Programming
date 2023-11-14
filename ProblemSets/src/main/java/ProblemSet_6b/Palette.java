@@ -8,12 +8,28 @@ public class Palette {
 	}
 
 	public Palette(P_COLOUR[] colour) {
-		this.primaryColours = colour;
+		this.primaryColours = new P_COLOUR[3];
+		if (colour.length <= 3) {
+			for (int i = 0; i < colour.length; i++) {
+				if (colour[i] != null) {
+					this.primaryColours[i] = colour[i];
+				}
+			}
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	public void addColour(P_COLOUR colour) {
+		boolean colourContain = false;
 		for (int i = 0; i < 3; i++) {
-			if (primaryColours[i] != colour && primaryColours[i] == null) {
+			// Check colour not in array already
+			if (primaryColours[i] == colour) {
+				colourContain = true;
+			}
+		}
+		for (int i = 0; i < 3; i++) {
+			if (primaryColours[i] == null && colourContain != true) {
 				primaryColours[i] = colour;
 				break;
 			}

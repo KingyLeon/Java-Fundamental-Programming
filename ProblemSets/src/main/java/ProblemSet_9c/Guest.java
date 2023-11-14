@@ -32,7 +32,7 @@ public class Guest implements IGuest {
 	public double calculateTotalChargeWithoutVAT() {
 		// initialise total charge outside of iteration
 		double totalCharge = 0;
-		// Loop for iterating through arrayList until its end
+		// Loop for iterating through arrayList and returning sum of all charges
 		for (int i = 0; i < charges.size(); i++) {
 			// Calling getCharge() method from Charge class for each item
 			totalCharge += charges.get(i).getCharge();
@@ -41,13 +41,12 @@ public class Guest implements IGuest {
 	}
 
 	@Override
-	// A method that calculates the VAT charge for items with a specific VATRate
+	// A method that calculates the total VAT charge for items with a specific VATRate
 	public double calculateVATChargeAtRate(VATRate r) {
 		double vat = 0;
-		// Iteration loop for the "charges" arrayList
+		// Iteration loop for the "charges" that stores total sum of all charges with a certain VATRate
 		for (int i = 0; i < charges.size(); i++) {
-			// Conditional statement to ensure each charge in the list has appropriate
-			// VATrate
+			// Conditional statement to ensure each charge in the list has appropriate VATRate
 			if (charges.get(i).getService().getRate() == r) {
 				vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
 			}

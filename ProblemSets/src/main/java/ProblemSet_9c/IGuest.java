@@ -1,13 +1,13 @@
 package ProblemSet_9c;
 
 public interface IGuest {
-	public void addCharge(Service s, double c);
+	 void addCharge(Service s, double c);
 
-	public double calculateTotalChargeWithoutVAT();
+	 double calculateTotalChargeWithoutVAT();
 
-	public double calculateVATChargeAtRate(VATRate r);
+	 double calculateVATChargeAtRate(VATRate r);
 
-	public double calculateTotalChargeIncVat();
+	 double calculateTotalChargeIncVat();
 
-	public String toString();
+	 String toString();
 }

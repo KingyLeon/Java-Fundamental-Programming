@@ -23,6 +23,7 @@ public class PersonTracker {
 				while (read.hasNextLine()) {
 					String line = read.nextLine();
 					breakLine(line.toString());
+					output.append(line + "/n");
 				}
 				read.close();
 				return output.toString();
@@ -37,6 +38,7 @@ public class PersonTracker {
 	public void addPerson(String n, String s, int a) {
 		Person newPerson = new Person(n, s, a);
 		if (peopleList.contains(newPerson)) {
+			// do nothing
 		}
 		peopleList.add(newPerson);
 	}
@@ -58,7 +60,6 @@ public class PersonTracker {
 	}
 
 	public String getPeopleList() {
-		StringBuffer output = new StringBuffer();
 		return peopleList.toString();
 	}
 }
