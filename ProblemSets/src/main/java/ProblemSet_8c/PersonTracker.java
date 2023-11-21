@@ -14,9 +14,12 @@ public class PersonTracker {
 	}
 
 	public String readTextFile(String file) {
+		// Set format the file should be in
 		String fileExpression = "[A-Z]*[a-z]*.txt";
+		// if file matches, create a new file type
 		if (file.matches(fileExpression)) {
 			File myFile = new File(file);
+			// Reads a file and builds a string of each lines contents
 			try {
 				Scanner read = new Scanner(myFile);
 				StringBuffer output = new StringBuffer();
@@ -27,9 +30,10 @@ public class PersonTracker {
 				}
 				read.close();
 				return output.toString();
-
-			} catch (FileNotFoundException e) {
-				return file;
+				// If file is not found, code below is executed and string is returned
+			} 
+			catch (FileNotFoundException e) {
+				return "File not found";
 			}
 		}
 		return "";
@@ -51,14 +55,16 @@ public class PersonTracker {
 		return output.toString();
 	}
 
+	// Method that takes a name, and splits based upon the spaces present
 	private void breakLine(String line) {
 		String[] Comp = line.split(" ");
-		String f = Comp[0];
-		String s = Comp[1];
-		int a = Integer.valueOf(Comp[2]);
+		String f = Comp[0]; // first name
+		String s = Comp[1]; // surname
+		int a = Integer.valueOf(Comp[2]); // age
 		addPerson(f, s, a);
 	}
 
+	// Method for returning the people stored in peopleList
 	public String getPeopleList() {
 		return peopleList.toString();
 	}

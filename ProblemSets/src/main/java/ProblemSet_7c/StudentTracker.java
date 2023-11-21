@@ -26,6 +26,9 @@ public class StudentTracker {
 
 	private void initialiseMap() {
 		moduleList = new HashMap<>();
+		for (Student student : this.studentList) {
+			moduleList.put(student.getUrn(), student);
+		}
 	}
 
 	public String printStudents() {
