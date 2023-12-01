@@ -19,8 +19,8 @@ public class Counting {
 			int counter = 1;
 			// Loop that builds a string while file has a next line
 			while (read.hasNextLine()) {
-				output.append(displayLine(read.nextLine(), counter));
-				// counter iterates
+				output.append(displayLine(
+						read.nextLine(), counter));
 				counter++;
 			}
 			// Scanner is closed when file has no more lines

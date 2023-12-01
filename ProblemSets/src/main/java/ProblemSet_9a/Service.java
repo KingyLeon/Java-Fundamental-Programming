@@ -7,11 +7,11 @@ public class Service {
 
 	// Parameterised Constructor for defining
 	public Service(String code, String name, VATRate rate) {
-		// Conditional statement to check NullPointerException and throw it if present
+		// Check's NullPointerException and throw it if present
 		if (code == null || name == null) {
 			throw new NullPointerException();
 		}
-		// Conditional statement check for IllegalArgumentException and throws it
+		// Check's for IllegalArgumentException and throws it
 		if (code.matches("[A-Z]{4}[0-9]{5}")) {
 			this.code = code;
 			this.name = name;

@@ -10,8 +10,10 @@ public class Guest implements IGuest {
 	private String telephone;
 	private List<Charge> charges;
 
-	// parameterised constructor for initialising the "Guest" object and their
-	// charges, no validation
+	/*
+	 * parameterised constructor for initialising the "Guest" object and their
+	 * charges, no validation
+	 */
 	public Guest(String forename, String surname, String address, String telephone) {
 		this.forename = forename;
 		this.surname = surname;
@@ -30,9 +32,10 @@ public class Guest implements IGuest {
 	@Override
 	// Method for calculating non taxed total charge
 	public double calculateTotalChargeWithoutVAT() {
-		// initialise total charge outside of iteration
 		double totalCharge = 0;
-		// Loop for iterating through arrayList and returning sum of all charges
+		/*
+		 * Iterate through charges and returning sum of all charges
+		 */
 		for (int i = 0; i < charges.size(); i++) {
 			// Calling getCharge() method from Charge class for each item
 			totalCharge += charges.get(i).getCharge();
@@ -41,12 +44,15 @@ public class Guest implements IGuest {
 	}
 
 	@Override
-	// A method that calculates the total VAT charge for items with a specific VATRate
+	/*
+	 * A method that calculates the total VAT charge for items with a specific
+	 * VATRate
+	 */
 	public double calculateVATChargeAtRate(VATRate r) {
 		double vat = 0;
-		// Iteration loop for the "charges" that stores total sum of all charges with a certain VATRate
+		// Loop through all charges
 		for (int i = 0; i < charges.size(); i++) {
-			// Conditional statement to ensure each charge in the list has appropriate VATRate
+			// validation for each charge
 			if (charges.get(i).getService().getRate() == r) {
 				vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
 			}
@@ -55,12 +61,12 @@ public class Guest implements IGuest {
 	}
 
 	@Override
-	// Method for calculating total charge Plus the total VAT charge
+	/* Method for calculating total charge 
+	 * plus the total VAT charge */
 	public double calculateTotalChargeIncVat() {
-		// Initialise variables outside of loop
 		double charge = 0;
 		double vat = 0;
-		// Loop through list to calculate charge and vat
+		// calculating all charge and vat from list
 		for (int i = 0; i < charges.size(); i++) {
 			charge += charges.get(i).getCharge();
 			vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;

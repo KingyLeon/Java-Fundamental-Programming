@@ -19,7 +19,9 @@ public class PersonTracker {
 		// if file matches, create a new file type
 		if (file.matches(fileExpression)) {
 			File myFile = new File(file);
-			// Reads a file and builds a string of each lines contents
+			/*
+			 * Reads a file and builds a string of each lines contents
+			 */
 			try {
 				Scanner read = new Scanner(myFile);
 				StringBuffer output = new StringBuffer();
@@ -30,8 +32,10 @@ public class PersonTracker {
 				}
 				read.close();
 				return output.toString();
-				// If file is not found, code below is executed and string is returned
-			} 
+			}
+			/*
+			 * If file is not found, String is returned
+			 */
 			catch (FileNotFoundException e) {
 				return "File not found";
 			}
@@ -55,12 +59,12 @@ public class PersonTracker {
 		return output.toString();
 	}
 
-	// Method that takes a name, and splits based upon the spaces present
+	//Passes a name, and splits based upon the spaces present
 	private void breakLine(String line) {
-		String[] Comp = line.split(" ");
-		String f = Comp[0]; // first name
-		String s = Comp[1]; // surname
-		int a = Integer.valueOf(Comp[2]); // age
+		String[] comp = line.split(" ");
+		String f = comp[0];
+		String s = comp[1];
+		int a = Integer.valueOf(comp[2]);
 		addPerson(f, s, a);
 	}
 

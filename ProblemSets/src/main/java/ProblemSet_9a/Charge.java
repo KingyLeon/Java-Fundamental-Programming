@@ -4,7 +4,7 @@ public class Charge {
 	private Service service;
 	private double charge;
 
-	// Parameterised Constructor for creating object and giving values to variables
+	// Create object and giving values to variables
 	public Charge(Service service, double charge) {
 		this.service = service;
 		if (charge > 0) {

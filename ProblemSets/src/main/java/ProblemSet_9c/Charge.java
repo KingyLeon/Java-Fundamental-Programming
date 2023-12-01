@@ -4,7 +4,8 @@ public class Charge {
 	private Service service;
 	private double charge;
 
-	// Parameterised Constructor for creating object and giving values to variables
+	/* Parameterised Constructor for creating object 
+	 * and giving values to variables */
 	public Charge(Service service, double charge) {
 		this.service = service;
 		if (charge > 0) {
@@ -14,7 +15,7 @@ public class Charge {
 		}
 	}
 
-	// Method for calculating VAT, 0% for LOW, 5% for LOW, 20% for STANDRD
+	// Method for calculating VAT
 	public double calculateVAT() {
 		double output = 0;
 		// Conditional statement for checking LOW, STANDard
