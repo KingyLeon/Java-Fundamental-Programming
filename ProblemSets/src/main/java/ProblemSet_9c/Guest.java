@@ -11,10 +11,13 @@ public class Guest implements IGuest {
 	private List<Charge> charges;
 
 	/*
-	 * parameterised constructor for initialising the "Guest" object and their
+	 * parameterised constructor for 
+	 * initialising the "Guest" object and their
 	 * charges, no validation
 	 */
-	public Guest(String forename, String surname, String address, String telephone) {
+	public Guest(String forename,
+			String surname, String address,
+			String telephone) {
 		this.forename = forename;
 		this.surname = surname;
 		this.address = address;
@@ -23,7 +26,8 @@ public class Guest implements IGuest {
 	}
 
 	@Override
-	// Method for adding a new item to the arrayList "charges"
+	/* Method for adding a 
+	 * new item to the arrayList "charges" */
 	public void addCharge(Service s, double c) {
 		Charge newCharge = new Charge(s, c);
 		charges.add(newCharge);
@@ -37,7 +41,6 @@ public class Guest implements IGuest {
 		 * Iterate through charges and returning sum of all charges
 		 */
 		for (int i = 0; i < charges.size(); i++) {
-			// Calling getCharge() method from Charge class for each item
 			totalCharge += charges.get(i).getCharge();
 		}
 		return totalCharge;
@@ -45,7 +48,8 @@ public class Guest implements IGuest {
 
 	@Override
 	/*
-	 * A method that calculates the total VAT charge for items with a specific
+	 * A method that calculates the 
+	 * total VAT charge for items with a specific
 	 * VATRate
 	 */
 	public double calculateVATChargeAtRate(VATRate r) {
@@ -54,7 +58,8 @@ public class Guest implements IGuest {
 		for (int i = 0; i < charges.size(); i++) {
 			// validation for each charge
 			if (charges.get(i).getService().getRate() == r) {
-				vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
+				vat += (charges.get(i).getCharge() *
+						charges.get(i).calculateVAT()) / 100;
 			}
 		}
 		return vat;
@@ -69,7 +74,8 @@ public class Guest implements IGuest {
 		// calculating all charge and vat from list
 		for (int i = 0; i < charges.size(); i++) {
 			charge += charges.get(i).getCharge();
-			vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
+			vat += (charges.get(i).getCharge() *
+					charges.get(i).calculateVAT()) / 100;
 		}
 		return (charge + vat);
 	}

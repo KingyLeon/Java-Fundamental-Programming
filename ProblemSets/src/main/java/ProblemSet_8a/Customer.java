@@ -10,10 +10,9 @@ public class Customer {
 		 * Checks if name + surname in valid format. Returns IllegalArgument Exception
 		 * with a message
 		 */
-		if (validateInfo(name) != true ||
-			validateInfo(surname) != true) {
-			throw new IllegalArgumentException(
-			"Name is not in the correct format");
+		if (!(validateInfo(name)
+				&& validateInfo(surname))) {
+			throw new IllegalArgumentException("Name is not in the correct format");
 		}
 		setName(name);
 		setSurname(surname);

@@ -11,7 +11,8 @@ public class Service {
 		if (code == null || name == null) {
 			throw new NullPointerException();
 		}
-		// Conditional statement to check for IllegalArgumentException for Code
+		/* Conditional statement to check 
+		 * for IllegalArgumentException for Code */
 		if (code.matches("[A-Z]{4}[0-9]{5}")) {
 			this.code = code;
 			this.name = name;

@@ -32,11 +32,8 @@ public class PersonTracker {
 				}
 				read.close();
 				return output.toString();
-			}
-			/*
-			 * If file is not found, String is returned
-			 */
-			catch (FileNotFoundException e) {
+			} catch (FileNotFoundException e) {
+				// If file is not found, String is returned
 				return "File not found";
 			}
 		}
@@ -46,9 +43,10 @@ public class PersonTracker {
 	public void addPerson(String n, String s, int a) {
 		Person newPerson = new Person(n, s, a);
 		if (peopleList.contains(newPerson)) {
-			// do nothing
+			System.out.println("Person already in list");
+		} else {
+			peopleList.add(newPerson);
 		}
-		peopleList.add(newPerson);
 	}
 
 	public String displayList() {
@@ -59,7 +57,7 @@ public class PersonTracker {
 		return output.toString();
 	}
 
-	//Passes a name, and splits based upon the spaces present
+	// Passes a name, and splits based upon the spaces present
 	private void breakLine(String line) {
 		String[] comp = line.split(" ");
 		String f = comp[0];

@@ -11,10 +11,13 @@ public class Guest implements IGuest {
 	private List<Charge> charges;
 
 	/*
-	 * parameterised constructor for initialising the "Guest" object and their
-	 * charges, no validation
+	 * parameterised constructor for 
+	 * initialising the "Guest" object 
+	 * and their charges, no validation
 	 */
-	public Guest(String forename, String surname, String address, String telephone) {
+	public Guest(String forename,
+			String surname, String address,
+			String telephone) {
 		this.forename = forename;
 		this.surname = surname;
 		this.address = address;
@@ -34,10 +37,10 @@ public class Guest implements IGuest {
 	public double calculateTotalChargeWithoutVAT() {
 		double totalCharge = 0;
 		/*
-		 * Iterate through charges and returning sum of all charges
+		 * Iterate through charges and 
+		 * returning sum of all charges
 		 */
 		for (int i = 0; i < charges.size(); i++) {
-			// Calling getCharge() method from Charge class for each item
 			totalCharge += charges.get(i).getCharge();
 		}
 		return totalCharge;
@@ -45,16 +48,17 @@ public class Guest implements IGuest {
 
 	@Override
 	/*
-	 * A method that calculates the total VAT charge for items with a specific
+	 * A method that calculates the total 
+	 * VAT charge for items with a specific
 	 * VATRate
 	 */
 	public double calculateVATChargeAtRate(VATRate r) {
 		double vat = 0;
-		// Iteration loop for the "charges" arrayList
 		for (int i = 0; i < charges.size(); i++) {
 		// validation for each charge
 			if (charges.get(i).getService().getRate() == r) {
-				vat += (charges.get(i).getCharge() * charges.get(i).calculateVAT()) / 100;
+				vat += (charges.get(i).getCharge() *
+						charges.get(i).calculateVAT()) / 100;
 			}
 		}
 		return vat;
@@ -62,7 +66,8 @@ public class Guest implements IGuest {
 
 	@Override
 	/*
-	 * Method for calculating total charge plus the total VAT charge
+	 * Method for calculating total charge 
+	 * plus the total VAT charge
 	 */
 	public double calculateTotalChargeIncVat() {
 		double charge = 0;
