@@ -8,8 +8,7 @@ public class Hotel {
 	private List<IGuest> guests;
 
 	/*
-	 * parameterised Constructor for assigning 
-	 * hotel name and initialising guest
+	 * parameterised Constructor for assigning hotel name and initialising guest
 	 * list
 	 */
 	public Hotel(String name) {
@@ -23,9 +22,7 @@ public class Hotel {
 	}
 
 	/*
-	 * Method for printing full list 
-	 * of guests at specific hotel. 
-	 * Formatting for
+	 * Method for printing full list of guests at specific hotel. Formatting for
 	 * guests is done in the "Guest" class
 	 */
 	public String printGuestList() {
