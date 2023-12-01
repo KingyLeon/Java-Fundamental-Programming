@@ -7,12 +7,14 @@ public class Customer {
 	// Parameterised Constructor
 	public Customer(String name, String surname) {
 		/*
-		 * Checks if name + surname in valid format. Returns IllegalArgument Exception
+		 * Checks if name + surname in valid format.
+		 * Returns IllegalArgument Exception
 		 * with a message
 		 */
 		if (!(validateInfo(name)
 				&& validateInfo(surname))) {
-			throw new IllegalArgumentException("Name is not in the correct format");
+			throw new IllegalArgumentException
+			("Name is not in the correct format");
 		}
 		setName(name);
 		setSurname(surname);

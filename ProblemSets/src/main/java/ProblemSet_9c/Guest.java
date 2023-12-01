@@ -15,9 +15,7 @@ public class Guest implements IGuest {
 	 * initialising the "Guest" object and their
 	 * charges, no validation
 	 */
-	public Guest(String forename,
-			String surname, String address,
-			String telephone) {
+	public Guest(String forename, String surname, String address, String telephone) {
 		this.forename = forename;
 		this.surname = surname;
 		this.address = address;

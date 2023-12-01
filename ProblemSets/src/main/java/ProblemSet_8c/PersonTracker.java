@@ -20,7 +20,8 @@ public class PersonTracker {
 		if (file.matches(fileExpression)) {
 			File myFile = new File(file);
 			/*
-			 * Reads a file and builds a string of each lines contents
+			 * Reads a file and builds a
+			 * string of each lines contents
 			 */
 			try {
 				Scanner read = new Scanner(myFile);

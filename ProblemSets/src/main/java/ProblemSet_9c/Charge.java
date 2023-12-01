@@ -5,9 +5,7 @@ public class Charge {
 	private double charge;
 
 	/*
-	 * Parameterised Constructor for 
-	 * creating object and giving 
-	 * values to variables
+	 * Parameterised Constructor for creating object and giving values to variables
 	 */
 	public Charge(Service service, double charge) {
 		this.service = service;
