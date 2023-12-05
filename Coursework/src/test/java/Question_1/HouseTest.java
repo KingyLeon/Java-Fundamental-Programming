@@ -17,7 +17,14 @@ public class HouseTest {
     @Test
     public void testGetPrice() {
 	House house = new House(1, "Percy Road", "Guildford", "GU2 7XH", 2);
-	assertEquals(0, house.getPrice(), 0);
+	Room r = new Room(500);
+	Room r2 = new Room(500);
+
+	ITenant t = new Tenant("f","s", 19, TenantType.PROFESSIONAL);
+	ITenant t2 = new Tenant("f","s", 19, TenantType.PROFESSIONAL);
+	house.occupy(r, t);
+	house.occupy(r2, t2);
+	assertEquals(1000, house.getPrice(), 0);
     }
 
     @Test

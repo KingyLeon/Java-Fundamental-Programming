@@ -1,19 +1,18 @@
-package Question_1;
+package Question_2;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class House {
+abstract class Property {
 	private int houseNumber;
 	private String street;
 	private String city;
 	private String postCode;
 	private int numberOfRooms;
-	private Map<Room, ITenant> rooms;
+	protected Map<Room, ITenant> rooms;
+	protected double councilTax;
 
-	public House(int houseNumber, String street, String city, String postCode, int numberOfRooms) {
+	public Property(int houseNumber, String street, String city, String postCode, int numberOfRooms) {
 		if (validateCity(city) != true) {
 			throw new IllegalArgumentException("Invalid City");
 		}
@@ -29,7 +28,6 @@ public class House {
 		rooms = new HashMap<>();
 	}
 
-	// Return number of un-populated rooms
 	public int getAvailableRooms() {
 		int output = numberOfRooms;
 		for (ITenant value : rooms.values()) {
@@ -41,32 +39,10 @@ public class House {
 		return output;
 	}
 
-	public double getPrice() {
-		int output = 0;
-		for (Room key : rooms.keySet()) {
-			if (key != null) {
-				output += key.getPrice();
-			}
-		}
-		return output;
+	public void setCouncilTax(double Tax) {
+
 	}
 
-	public boolean isAvailable() {
-		boolean output = true;
-		if (rooms.size() == numberOfRooms) {
-			output = false;
-		}
-		return output;
-	}
-
-	public void occupy(Room r, ITenant t) {
-		if (isAvailable() == true) {
-			System.out.println(rooms);
-			rooms.put(r, t);
-		}
-	}
-
-	@Override
 	public String toString() {
 		StringBuilder output = new StringBuilder();
 		output.append(houseNumber + " ");
@@ -79,8 +55,7 @@ public class House {
 	}
 
 	private boolean validateCity(String input) {
-
-		String regularExpression ="[A-Z][a-z]+" ;
+		String regularExpression = "[A-Z][a-z]+";
 		boolean output;
 		if (input.matches(regularExpression)) {
 			output = true;
@@ -92,7 +67,6 @@ public class House {
 	}
 
 	private boolean validatePostCode(String input) {
-
 		String regularExpression1 = "[A-Z]{2}[0-9]{2}[A-Z]{2}";
 		String regularExpression2 = "[A-Z]{2}[0-9] [0-9][A-Z]{2}";
 		boolean output;
@@ -101,7 +75,15 @@ public class House {
 		} else {
 			output = false;
 		}
-
 		return output;
 	}
+
+	public abstract double getPrice();
+
+	public abstract boolean isAvailable();
+
+	public abstract void occupy(Room r, ITenant t);
+
+	public abstract String displayOccupiedProperty();
+
 }
