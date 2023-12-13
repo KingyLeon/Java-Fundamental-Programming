@@ -1,10 +1,5 @@
 package Question_2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class House extends Property {
 
 	public House(int houseNumber, String street, String city, String postCode, int numberOfRooms) {
@@ -14,35 +9,53 @@ public class House extends Property {
 	@Override
 	public String toString() {
 		StringBuilder output = new StringBuilder();
-		
+		output.append(getHouseNumber() + " ");
+		output.append(getStreet() + ", ");
+		output.append(getCity() + " ");
+		output.append(getPostCode() + " (");
+		output.append(getNumberOfRooms() + " bedroom house :");
+		output.append(getAvailableRooms() + " available)");
+		return output.toString();
 	}
 
 	@Override
 	public double getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean isAvailable() {
-		boolean output = true;
-		if (rooms.size() == numberOfRooms) {
-			output = false;
+		int output = 0;
+		for (Room key : getRooms().keySet()) {
+			if (key != null) {
+				output += key.getPrice();
+			}
 		}
 		return output;
 	}
 
 	@Override
+	public boolean isAvailable() {
+		return !(rooms.size() == getNumberOfRooms());
+	}
+
+	@Override
 	public void occupy(Room r, ITenant t) {
 		if (isAvailable() == true) {
-			System.out.println(rooms);
 			rooms.put(r, t);
-		}		
+		}
 	}
 
 	@Override
 	public String displayOccupiedProperty() {
-		// TODO Auto-generated method stub
-		return null;
+		StringBuilder output = new StringBuilder();
+		output.append(toString() + "\n\t");
+		int sum = 0;
+		for (Room i : rooms.keySet()) {
+			output.append("Room: " + i.getPrice() + "\n\t");
+			sum += i.getPrice();
+		}
+		if (getAvailableRooms() == 0) {
+			output.append("Total: £" + String.format("%.2f",(sum * 12.0)));
+			output.append(" (Council Tax: £" + getCouncilTax() + ")\n");
+		} else {
+			output.delete(output.length() - 1, output.length());
+		}
+		return output.toString();
 	}
 }

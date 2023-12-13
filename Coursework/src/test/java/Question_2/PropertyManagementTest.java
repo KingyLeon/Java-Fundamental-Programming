@@ -141,6 +141,7 @@ public class PropertyManagementTest {
 		"1 Percy Road, Guildford GU2 7XH (2 bedroom house :0 available)\n\tRoom: 950.0\n\tRoom: 900.0\n\tTotal: £22200.00 (Council Tax: £0.0)\n10 The Chase, Guildford GU2 7UB (2 bedroom house :2 available)\n",
 		"1 Percy Road, Guildford GU2 7XH (2 bedroom house :0 available)\n\tRoom: 900.0\n\tRoom: 950.0\n\tTotal: £22200.00 (Council Tax: £0.0)\n10 The Chase, Guildford GU2 7UB (2 bedroom house :2 available)\n" };
 	List<String> expectedTitlesList = Arrays.asList(output);
+	System.out.println(pm.displayProperties());
 	assertTrue(expectedTitlesList.contains((pm.displayProperties())));
 	assertEquals(50.0, pm.percentageCouncilTaxExemption(), 0);
     }

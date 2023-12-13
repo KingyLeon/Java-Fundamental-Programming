@@ -1,6 +1,8 @@
 package Question_2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 abstract class Property {
@@ -32,7 +34,6 @@ abstract class Property {
 		int output = numberOfRooms;
 		for (ITenant value : rooms.values()) {
 			if (value != null) {
-				System.out.println("Value is ran");
 				output = output - 1;
 			}
 		}
@@ -40,7 +41,32 @@ abstract class Property {
 	}
 
 	public void setCouncilTax(double Tax) {
+		TenantType[] occupants = new TenantType[rooms.size()];
+		int iteration = 0;
+		int student = 0;
+		int professional = 0;
+		for (ITenant i : rooms.values()) {
+			occupants[iteration] = i.getType();
+			iteration++;
+		}
 
+		for (TenantType i : occupants) {
+			if (i == TenantType.STUDENT) {
+				student++;
+			}
+			if (i == TenantType.PROFESSIONAL) {
+				professional++;
+			}
+		}
+		if (professional == 0) {
+			this.councilTax = 0;
+		}
+		else if (student == 0) {
+			this.councilTax = Tax;
+		}
+		else if (professional == 1) {
+			this.councilTax = Tax * 0.75;
+		}
 	}
 
 	public String toString() {
@@ -49,21 +75,13 @@ abstract class Property {
 		output.append(street + ", ");
 		output.append(city + " ");
 		output.append(postCode + " (");
-		output.append(numberOfRooms + " bedroom house :");
-		output.append(getAvailableRooms() + " available)");
+		output.append(numberOfRooms + " bedroom ");
 		return output.toString();
 	}
 
 	private boolean validateCity(String input) {
 		String regularExpression = "[A-Z][a-z]+";
-		boolean output;
-		if (input.matches(regularExpression)) {
-			output = true;
-		} else {
-			output = false;
-		}
-
-		return output;
+		return input.matches(regularExpression);
 	}
 
 	private boolean validatePostCode(String input) {
@@ -76,6 +94,38 @@ abstract class Property {
 			output = false;
 		}
 		return output;
+	}
+
+	public int getHouseNumber() {
+		return houseNumber;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public int getNumberOfRooms() {
+		return numberOfRooms;
+	}
+
+	public Map<Room, ITenant> getRooms() {
+		return rooms;
+	}
+
+	public void setRooms(Map<Room, ITenant> rooms) {
+		this.rooms = rooms;
+	}
+
+	public double getCouncilTax() {
+		return councilTax;
 	}
 
 	public abstract double getPrice();
