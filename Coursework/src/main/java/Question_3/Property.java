@@ -113,7 +113,7 @@ abstract class Property {
 				output += 3;
 			}
 		}
-		return (output / total) * 100;
+		return (output / total);
 	}
 
 	public int getHouseNumber() {
