@@ -11,14 +11,17 @@ public class House {
 	private int numberOfRooms;
 	private Map<Room, ITenant> rooms;
 
-	public House(int houseNumber, String street, String city, String postCode, int numberOfRooms) {
-		if (validateCity(city) != true) {
+	public House(int houseNumber, String street,
+			String city, String postCode, int numberOfRooms) {
+		if (!validateCity(city)) {
 			throw new IllegalArgumentException("Invalid City");
 		}
-		if (validatePostCode(postCode) != true) {
+		if (!validatePostCode(postCode)) {
 			throw new IllegalArgumentException("Invalid Postcode");
 		}
-		if (houseNumber == 0 || street == null || city == null || postCode == null || numberOfRooms == 0) {
+		if (houseNumber == 0 || street == null
+				|| city == null || postCode == null
+				|| numberOfRooms == 0) {
 			throw new NullPointerException();
 		}
 		this.city = city;
