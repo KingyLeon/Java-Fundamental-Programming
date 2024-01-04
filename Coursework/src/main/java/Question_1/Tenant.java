@@ -17,8 +17,8 @@ public class Tenant implements ITenant {
 			throw new IllegalArgumentException(
 					"Tenant is not old enough");
 		}
-		if (!forename.matches(regex)|| !surname.matches(regex)) {
-			//throw new IllegalArgumentException();
+		if (!forename.matches(regex) || !surname.matches(regex)) {
+			throw new IllegalArgumentException();
 		}
 		this.forename = forename;
 		this.surname = surname;

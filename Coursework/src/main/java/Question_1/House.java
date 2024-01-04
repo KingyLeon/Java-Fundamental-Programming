@@ -79,9 +79,9 @@ public class House {
 	}
 
 	private boolean validateCity(String input) {
-		String regularExpression = "[A-Z][a-z]+";
+		String regex = "[A-Z][a-z]+";
 		boolean output;
-		if (input.matches(regularExpression)) {
+		if (input.matches(regex)) {
 			output = true;
 		} else {
 			output = false;
@@ -91,11 +91,10 @@ public class House {
 	}
 
 	private boolean validatePostCode(String input) {
-
-		String regularExpression1 = "(GU)[0-9]{2}[A-Z]{2}";
-		String regularExpression2 = "(GU)[0-9] [0-9][A-Z]{2}";
+		String regex1 = "(GU)[0-9]{2}[A-Z]{2}";
+		String regex2 = "(GU)[0-9] [0-9][A-Z]{2}";
 		boolean output;
-		if (input.matches(regularExpression1) || input.matches(regularExpression2)) {
+		if (input.matches(regex1)|| input.matches(regex2)) {
 			output = true;
 		} else {
 			output = false;
