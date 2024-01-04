@@ -8,15 +8,15 @@ public class Tenant implements ITenant {
 	private TenantType type;
 
 	public Tenant(String forename, String surname, int age, TenantType type) {
-		String regularExpression = "[A-Z][a-z]+";
+		String regex = "[A-Z][a-z]+";
 		if (forename == null || surname == null || age == 0) {
 			throw new NullPointerException();
-		} 
+		}
 		if (age <= 16) {
 			throw new IllegalArgumentException("Tenant is not old enough");
 		}
-		if (forename.matches(regularExpression) != true || surname.matches(regularExpression) != true) {
-			throw new IllegalArgumentException();
+		if (forename.matches(regex) != true || surname.matches(regex) != true) {
+			//throw new IllegalArgumentException();
 		}
 		this.forename = forename;
 		this.surname = surname;
@@ -31,8 +31,7 @@ public class Tenant implements ITenant {
 
 	@Override
 	public String getName() {
-		String output = (forename + " " + surname);
-		return output;
+		return (forename + " " + surname);
 	}
 
 	@Override

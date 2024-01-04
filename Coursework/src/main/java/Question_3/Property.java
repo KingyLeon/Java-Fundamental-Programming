@@ -60,9 +60,9 @@ abstract class Property {
 				professional++;
 			}
 		}
-		if (professional == 0) {
+		if (professional == 0 && student > 0) {
 			this.councilTax = 0;
-		} else if (student == 0) {
+		} else if ((student == 0 && professional == 0) || professional > 1) {
 			this.councilTax = Tax;
 		} else if (professional == 1) {
 			this.councilTax = Tax * 0.75;
@@ -85,8 +85,8 @@ abstract class Property {
 	}
 
 	private boolean validatePostCode(String input) {
-		String regularExpression1 = "[A-Z]{2}[0-9]{2}[A-Z]{2}";
-		String regularExpression2 = "[A-Z]{2}[0-9] [0-9][A-Z]{2}";
+		String regularExpression1 = "GU[0-9]{2}[A-Z]{2}";
+		String regularExpression2 = "GU[0-9] [0-9][A-Z]{2}";
 		boolean output;
 		if (input.matches(regularExpression1) || input.matches(regularExpression2)) {
 			output = true;
@@ -100,20 +100,12 @@ abstract class Property {
 		complaints.add(c);
 	}
 
-	public int calculateImpact() { // DOES NOT REALLY WORK
+	public int calculateImpact() {
 		int output = 0;
-		int total = 0;
 		for (Complaint c : complaints) {
-			total++;
-			if (c.getSeverity() == Severity.LOW) {
-				output += 1;
-			} else if (c.getSeverity() == Severity.MEDIUM) {
-				output += 2;
-			} else if (c.getSeverity() == Severity.HIGH) {
-				output += 3;
-			}
+			output += c.getSeverity().getWeight();
 		}
-		return (output / total);
+		return output;
 	}
 
 	public int getHouseNumber() {

@@ -1,8 +1,6 @@
 package Question_1;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class House {
@@ -20,7 +18,9 @@ public class House {
 		if (validatePostCode(postCode) != true) {
 			throw new IllegalArgumentException("Invalid Postcode");
 		}
-
+		if (houseNumber == 0 || street == null || city == null || postCode == null || numberOfRooms == 0) {
+			throw new NullPointerException();
+		}
 		this.city = city;
 		this.houseNumber = houseNumber;
 		this.street = street;
@@ -34,7 +34,6 @@ public class House {
 		int output = numberOfRooms;
 		for (ITenant value : rooms.values()) {
 			if (value != null) {
-				System.out.println("Value is ran");
 				output = output - 1;
 			}
 		}
@@ -44,9 +43,7 @@ public class House {
 	public double getPrice() {
 		int output = 0;
 		for (Room key : rooms.keySet()) {
-			if (key != null) {
-				output += key.getPrice();
-			}
+			output += key.getPrice();
 		}
 		return output;
 	}
@@ -60,9 +57,9 @@ public class House {
 	}
 
 	public void occupy(Room r, ITenant t) {
-		if (isAvailable() == true) {
+		if (isAvailable()) {
 			System.out.println(rooms);
-			rooms.put(r, t);
+			this.rooms.put(r, t);
 		}
 	}
 
@@ -79,8 +76,7 @@ public class House {
 	}
 
 	private boolean validateCity(String input) {
-
-		String regularExpression ="[A-Z][a-z]+" ;
+		String regularExpression = "[A-Z][a-z]+";
 		boolean output;
 		if (input.matches(regularExpression)) {
 			output = true;
@@ -93,8 +89,8 @@ public class House {
 
 	private boolean validatePostCode(String input) {
 
-		String regularExpression1 = "[A-Z]{2}[0-9]{2}[A-Z]{2}";
-		String regularExpression2 = "[A-Z]{2}[0-9] [0-9][A-Z]{2}";
+		String regularExpression1 = "(GU)[0-9]{2}[A-Z]{2}";
+		String regularExpression2 = "(GU)[0-9] [0-9][A-Z]{2}";
 		boolean output;
 		if (input.matches(regularExpression1) || input.matches(regularExpression2)) {
 			output = true;

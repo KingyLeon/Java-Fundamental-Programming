@@ -1,19 +1,22 @@
 package Question_2;
 
 public class Flat extends Property {
-	private double MAINTENANCE_COSTS = 500;
+	private double MAINTENANCE_COSTS = 500.0;
 	private int floor;
 
 	public Flat(int houseNumber, String street, String city, String postCode, int numberOfRooms, int floor) {
 		super(houseNumber, street, city, postCode, numberOfRooms);
 		this.floor = floor;
+		if (floor < 0) {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	@Override
 	// Return total price of all rooms
 	public double getPrice() {
 		int output = 0;
-		for (Room key : getRooms().keySet()) {
+		for (Room key : rooms.keySet()) {
 			if (key != null) {
 				output += key.getPrice();
 			}

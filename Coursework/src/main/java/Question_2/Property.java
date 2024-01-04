@@ -1,8 +1,6 @@
 package Question_2;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 abstract class Property {
@@ -21,7 +19,9 @@ abstract class Property {
 		if (validatePostCode(postCode) != true) {
 			throw new IllegalArgumentException("Invalid Postcode");
 		}
-
+		if (houseNumber == 0 || street == null || city == null || postCode == null || numberOfRooms == 0) {
+			throw new NullPointerException();
+		}
 		this.city = city;
 		this.houseNumber = houseNumber;
 		this.street = street;
@@ -58,13 +58,11 @@ abstract class Property {
 				professional++;
 			}
 		}
-		if (professional == 0) {
+		if (professional == 0 && student > 0) {
 			this.councilTax = 0;
-		}
-		else if (student == 0) {
+		} else if ( (student == 0 && professional == 0) || professional > 1) {
 			this.councilTax = Tax;
-		}
-		else if (professional == 1) {
+		} else if (professional == 1) {
 			this.councilTax = Tax * 0.75;
 		}
 	}
@@ -114,10 +112,6 @@ abstract class Property {
 
 	public int getNumberOfRooms() {
 		return numberOfRooms;
-	}
-
-	public Map<Room, ITenant> getRooms() {
-		return rooms;
 	}
 
 	public void setRooms(Map<Room, ITenant> rooms) {

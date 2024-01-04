@@ -3,6 +3,7 @@ package Question_1;
 import java.util.ArrayList;
 import java.util.List;
 
+// COME BACK AND COMMENT PLEASE MY LOVE
 public class PropertyManagement {
 	private List<House> properties;
 
@@ -15,7 +16,13 @@ public class PropertyManagement {
 	}
 
 	public void addTenant(House p, Room r, ITenant t) {
-		p.occupy(r, t);
+		if (properties.contains(p)) {
+			if (p.isAvailable()) {
+				p.occupy(r, t);
+			}
+		} else {
+			throw new IllegalArgumentException("House Full");
+		}
 	}
 
 	public String displayProperties() {
@@ -29,8 +36,7 @@ public class PropertyManagement {
 	public void removeProperty(House p) {
 		if (properties.contains(p)) {
 			properties.remove(p);
-		}
-		else {
+		} else {
 			throw new IllegalArgumentException();
 		}
 	}

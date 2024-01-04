@@ -83,11 +83,13 @@ public class PropertyManagement {
 	}
 
 	public String findProblematicProperty() {
-		StringBuffer output = new StringBuffer();
+		Property problem = null;
 		for (Property p : properties) {
-			output.append(p.toString());
+			if (problem == null || p.calculateImpact() > problem.calculateImpact()) {
+				problem = p;
+			}
 		}
-		return output.toString();
+		return problem.toString();
 	}
 
 	public String displayInfographics() {
@@ -112,7 +114,6 @@ public class PropertyManagement {
 				} else if (t.getAge() > 60) {
 					to100++;
 				}
-
 				if (t.getType() == TenantType.STUDENT) {
 					student++;
 				} else if (t.getType() == TenantType.PROFESSIONAL) {
@@ -131,6 +132,5 @@ public class PropertyManagement {
 		output.append("Professional:" + professional + "\n");
 		output.append("Student:" + student);
 		return output.toString();
-
 	}
 }
