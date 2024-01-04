@@ -7,15 +7,17 @@ public class Tenant implements ITenant {
 	private int age;
 	private TenantType type;
 
-	public Tenant(String forename, String surname, int age, TenantType type) {
+	public Tenant(String forename, String surname,
+			int age, TenantType type) {
 		String regex = "[A-Z][a-z]+";
 		if (forename == null || surname == null || age == 0) {
 			throw new NullPointerException();
 		}
 		if (age <= 16) {
-			throw new IllegalArgumentException("Tenant is not old enough");
+			throw new IllegalArgumentException(
+					"Tenant is not old enough");
 		}
-		if (forename.matches(regex) != true || surname.matches(regex) != true) {
+		if (!forename.matches(regex)|| !surname.matches(regex)) {
 			//throw new IllegalArgumentException();
 		}
 		this.forename = forename;
