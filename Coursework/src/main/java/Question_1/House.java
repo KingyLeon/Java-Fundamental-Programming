@@ -94,7 +94,7 @@ public class House {
 		String regex1 = "(GU)[0-9]{2}[A-Z]{2}";
 		String regex2 = "(GU)[0-9] [0-9][A-Z]{2}";
 		boolean output;
-		if (input.matches(regex1)|| input.matches(regex2)) {
+		if (input.matches(regex1) || input.matches(regex2)) {
 			output = true;
 		} else {
 			output = false;
