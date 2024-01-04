@@ -11,7 +11,7 @@ public class Tenant implements ITenant {
 		String regularExpression = "[A-Z][a-z]+";
 		if (forename == null || surname == null || age == 0) {
 			throw new NullPointerException();
-		} 
+		}
 		if (age <= 16) {
 			throw new IllegalArgumentException("Tenant is not old enough");
 		}

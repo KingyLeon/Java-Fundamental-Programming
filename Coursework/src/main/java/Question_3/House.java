@@ -51,7 +51,7 @@ public class House extends Property {
 			sum += i.getPrice();
 		}
 		if (getAvailableRooms() == 0) {
-			output.append("Total: £" + String.format("%.2f",(sum * 12.0)));
+			output.append("Total: £" + String.format("%.2f", (sum * 12.0)));
 			output.append(" (Council Tax: £" + getCouncilTax() + ")\n");
 		} else {
 			output.delete(output.length() - 1, output.length());

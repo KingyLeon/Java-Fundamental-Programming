@@ -60,7 +60,7 @@ abstract class Property {
 		}
 		if (professional == 0 && student > 0) {
 			this.councilTax = 0;
-		} else if ( (student == 0 && professional == 0) || professional > 1) {
+		} else if ((student == 0 && professional == 0) || professional > 1) {
 			this.councilTax = Tax;
 		} else if (professional == 1) {
 			this.councilTax = Tax * 0.75;

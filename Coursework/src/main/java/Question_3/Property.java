@@ -16,10 +16,10 @@ abstract class Property {
 	private List<Complaint> complaints;
 
 	public Property(int houseNumber, String street, String city, String postCode, int numberOfRooms) {
-		if (validateCity(city) != true) {
+		if (!validateCity(city)) {
 			throw new IllegalArgumentException("Invalid City");
 		}
-		if (validatePostCode(postCode) != true) {
+		if (!validatePostCode(postCode)) {
 			throw new IllegalArgumentException("Invalid Postcode");
 		}
 
