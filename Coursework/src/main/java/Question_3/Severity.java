@@ -14,3 +14,4 @@ public enum Severity {
 		return weight;
 	}
 }
+
