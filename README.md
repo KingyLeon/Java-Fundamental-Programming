@@ -2,7 +2,8 @@
 Welcome to the Java Fundamental Programming repository. This project contains coursework and exercises related to fundamental Java programming concepts.
 
 # Project Overview
-This repository is dedicated to providing a comprehensive guide to fundamental Java programming. It includes various exercises and coursework to help reinforce the concepts learned.
+This repository was an introductory module into Java and Object Oriented Programming.
+Most relevant section of code in this project is my "Coursework" code where we built housing systems.
 
 # Repository Structure
 The repository includes the following directories and files:
